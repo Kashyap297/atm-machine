@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Machine</title>
+
+    <!-- font Awesome -->
+    <link rel="stylesheet" href="asset/css/all.min.css" class="rel">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- css -->
+    <link rel="stylesheet" href="asset/css/style.css" class="rel">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css" class="rel">
+</head>
+
+<body>
+    <section class="home-page">
+        <div class="welcome py-3 blue-bg-clr rounded-bottom-5 ">
+            <h1 class="text-center blue-color fw-bolder">Atm Machine</h1>
+        </div>
+        <div class="container">
+            <div class="home">
+                <div class="row align-items-center">
+                    <div class="col-6">
+                        <div class="home-img text-center py-5">
+                            <img src="asset/images/7725507.webp" alt="" width="85%">
+                        </div>
+                        <div class="details">
+                            <div class="card border-blue-color shadow">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped border mb-0">
+                                            <thead class="table-light blue-bg-clr ">
+                                                <tr>
+                                                    <th scope="col" class="blue-color fw-bold">No.</th>
+                                                    <th scope="col" class="blue-color fw-bold">Account Holder</th>
+                                                    <th scope="col" class="blue-color fw-bold">Account Number</th>
+                                                    <th scope="col" class="blue-color fw-bold">PIN</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1.</td>
+                                                    <td>Vikas Borse</td>
+                                                    <td>06111998</td>
+                                                    <td>9006</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2.</td>
+                                                    <td>Om Prakash Jat</td>
+                                                    <td>19072001</td>
+                                                    <td>3658</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3.</td>
+                                                    <td>Priyanshu Mishra</td>
+                                                    <td>05112002</td>
+                                                    <td>7272</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4.</td>
+                                                    <td>Kashyap Chauhan</td>
+                                                    <td>29072000</td>
+                                                    <td>7267</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 ps-5">
+                        <div class="card p-4 border-0 shadow">
+                            <h4 class="text-center gray-lt-color fw-bolder">Enter Details</h4>
+                            <div class="d-flex justify-content-between align-items-center my-3">
+                                <h4 class="font-18 fw-bold blue-color">Account Number</h4>
+                                <input type="number" class="blue-bg-clr gray-color letter-spacing"
+                                    placeholder="Account Number" id="accNumber">
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 class="font-18 fw-bold blue-color">PIN Number</h4>
+                                <input type="password" class="blue-bg-clr gray-color" placeholder="PIN" id="pinNumber">
+                            </div>
+                            <h4 class="font-18 fw-bold text-danger text-center" id="result"></h4>
+                            <div class="enter text-center ">
+                                <button type="submit" class="shadow" onclick="checkAccount()">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="user me-5 mt-5">
+        <h5 class="text-end">A/c Holder : <span class="blue-color" id="accName"></span></h5>
+        <h5 class="text-end">A/c Number : <span class="blue-color" id="accNum"></span></h5>
+    </section>
+    <section class="transaction mt-5">
+        <div class="container">
+            <div class="select-tras mt-5 p-5 shadow border-blue-color rounded">
+                <h2 class="text-center gray-color fw-bold mb-5">Select a Transaction</h2>
+                <div class="tran-content">
+                    <div class="row justify-content-between">
+                        <div class="col-5 my-4">
+                            <div class="d-flex selection p-2 py-3 align-items-center rounded" onclick="deposite()">
+                                <img src="asset/images/deposit.png" alt="" width="12%" class="mx-2">
+                                <span class="ms-3">Cash Deposite</span>
+                            </div>
+                        </div>
+                        <div class="col-5 my-4">
+                            <div class="d-flex selection p-2 py-3 align-items-center rounded" onclick="withdraw()">
+                                <img src="asset/images/withdraw.png" alt="" width="12%" class="mx-2">
+                                <span class="ms-3">Cash Withdraw</span>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="d-flex selection p-2 py-3 align-items-center rounded" onclick="balance()">
+                                <img src="asset/images/debt.png" alt="" width="12%" class="mx-2">
+                                <span class="ms-3">Balance Inquiry</span>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="d-flex selection p-2 py-3 align-items-center rounded" onclick="exit()">
+                                <img src="asset/images/exit.png" alt="" width="12%" class="mx-2">
+                                <span class="ms-3">Exit</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="balance mt-5">
+        <div class="container">
+            <div class="select-tras mt-5 p-5 shadow border-blue-color rounded">
+                <h2 class="text-center gray-color fw-bold mb-5">Transaction Complete</h2>
+                <div class="text-center mt-5">
+                    <h4 class="blue-color fw-bolder">Available Balance : </h4>
+                    <h2 class="fw-bold gray-color" id="availbal"></h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="deposite mt-5">
+        <div class="container">
+            <div class="select-tras mt-5 p-5 shadow border-blue-color rounded">
+                <div class="text-center">
+                    <div class="dep-input">
+                        <h2 class="text-center gray-color fw-bold mb-5">Deposite Amount</h2>
+                        <label for="" class="fs-3 blue-color me-3">Enter Amount : </label>
+                        <input type="number" class="blue-bg-clr fs-4 blue-color" id="inputamt">
+                        <span id="warn"></span>
+                        <div>
+                            <button onclick="depositeAmt()" class="mt-5">submit</button>
+                        </div>
+                    </div>
+                    <div class="thankyou">
+                        <h2 class="fw-bold blue-color">Thank You</h2>
+                        <p class="fs-4 gray-color mb-3">For Visiting Our ATM</p>
+                        <h3 class="blue-color fw-bolder mt-5">Current Balance : </h3>
+                        <span class="fs-3 org-clr" id="updatedBal"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="withdraw mt-5">
+        <div class="container">
+            <div class="select-tras mt-5 p-5 shadow border-blue-color rounded">
+                <div class="text-center">
+                    <div class="withdraw-input">
+                        <h2 class="text-center gray-color fw-bold mb-5">Withdraw Amount</h2>
+                        <label for="" class="fs-3 blue-color me-3">Enter Amount : </label>
+                        <input type="number" class="blue-bg-clr fs-4 blue-color" id="inputamnt">
+                        <div>
+                            <button onclick="withdrawAmt()" class="mt-5">submit</button>
+                        </div>
+                    </div>
+                    <div class="thankyou1">
+                        <h2 class="fw-bold blue-color">Thank You</h2>
+                        <p class="fs-4 gray-color mb-3">For Visiting Our ATM</p>
+                        <h3 class="blue-color fw-bolder mt-5">Current Balance : </h3>
+                        <span class="fs-3 org-clr" id="updatedBalance"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="last-visit">
+        <div class="container">
+            <div class="select-tras mt-5 p-5 pb-0 shadow border-blue-color rounded">
+                <div class="text-center">
+                    <h2 class="fw-bold blue-color">Thank You</h2>
+                    <p class="fs-4 gray-color mb-3">For Visiting Our ATM</p>
+                    <img src="asset/images/istockphoto-1433728313-612x612.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+
+    var accountHolders = [
+        {
+            name: "Vikas Borse",
+            accountNumber: "06111998",
+            pin: "9006",
+            balance: 100000
+        },
+        {
+            name: "Om Prakash Jat",
+            accountNumber: "19072001",
+            pin: "3658",
+            balance: 200000
+        },
+        {
+            name: "Priyanshu Mishra",
+            accountNumber: "05112002",
+            pin: "7272",
+            balance: 300000
+        },
+        {
+            name: "Kashyap Chauhan",
+            accountNumber: "29072000",
+            pin: "7267",
+            balance: 400000
+        }
+    ]
+
+    let currentAccount = null;
+
+    function findAccount(accountNumber, pin) {
+        return accountHolders.find(
+            (account) => account.accountNumber === accountNumber && account.pin === pin
+        );
+    }
+    
+    function checkAccount() {
+        const accountNumber = document.getElementById("accNumber").value;
+        const pin = document.getElementById("pinNumber").value;
+
+        currentAccount = findAccount(accountNumber, pin)
+
+        if (currentAccount) {
+            document.getElementById('accName').innerHTML = currentAccount.name
+            document.getElementById('accNum').innerHTML = currentAccount.accountNumber
+            document.getElementById('availbal').innerHTML = currentAccount.balance
+            hide();
+        } else {
+            document.getElementById('result').innerHTML = "Invalid Account Number or PIN";
+        }
+    }
+
+    function depositeAmt() {
+        document.querySelector('.thankyou').style.display = "block";
+        document.querySelector('.dep-input').style.display = "none";
+
+        const inputBal = document.getElementById('inputamt').value
+        if (currentAccount && inputBal > 0) {
+            currentAccount.balance += parseInt(inputBal);
+            document.getElementById('updatedBal').innerHTML = currentAccount.balance;
+        } else {
+            document.getElementById('updatedBal').innerHTML = "Invalid Input";
+        }
+    }
+
+    function withdrawAmt() {
+        document.querySelector('.thankyou1').style.display = "block";
+        document.querySelector('.withdraw-input').style.display = "none";
+
+        const inputBala = document.getElementById('inputamnt').value
+        if (currentAccount && inputBala > 0) {
+            if (currentAccount.balance >= inputBala) {
+                currentAccount.balance -= inputBala;
+                document.getElementById('updatedBalance').innerHTML = currentAccount.balance;
+            } else {
+                document.getElementById('updatedBalance').innerHTML = "Insufficient balance";
+            }
+        } else {
+            document.getElementById('updatedBalance').innerHTML = "Invalid Input";
+        }
+    }
+
+    function hide() {
+        document.querySelector('.transaction').style.display = "flex";
+        document.querySelector('.home').style.display = "none";
+        document.querySelector('.user').style.display = "block";
+    }
+    function balance() {
+        document.querySelector('.transaction').style.display = "none";
+        document.querySelector('.balance').style.display = "flex";
+        document.querySelector('.user').style.display = "block";
+    }
+    function exit() {
+        document.querySelector('.transaction').style.display = "none";
+        document.querySelector('.last-visit').style.display = "flex";
+        document.querySelector('.user').style.display = "block";
+    }
+    function deposite() {
+        document.querySelector('.transaction').style.display = "none";
+        document.querySelector('.deposite').style.display = "flex";
+    }
+    function withdraw() {
+        document.querySelector('.transaction').style.display = "none";
+        document.querySelector('.withdraw').style.display = "flex";
+    }
+
+</script>
+
+</html>
